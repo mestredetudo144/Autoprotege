@@ -59,9 +59,10 @@ footer{text-align:center;padding:28px;color:#66758b;font-size:13px}
 <footer>AutoProtege • Demonstração de site de seguro auto • Consulte os termos e condições antes de contratar.</footer>
 <script>
 document.getElementById('form').addEventListener('submit',function(e){
- e.preventDefault();
- document.getElementById('success').style.display='block';
- this.querySelector('button').textContent='Simulação enviada';
+e.preventDefault();
+document.getElementById('success').style.display='block';
+document.getElementById('success').innerHTML='Simulação recebida! Confira abaixo as opções de cobertura e entre em contato para receber sua cotação.';
+this.querySelector('button').textContent='Simulação recebida';
 });
 </script>
 </body>
