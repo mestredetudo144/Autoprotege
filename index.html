@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AutoProtege — Seguro Auto</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#152033}
+header{background:#0b1f3a;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:22px}.badge{font-size:12px;background:#163963;padding:8px 12px;border-radius:20px}
+.hero{background:linear-gradient(135deg,#0b1f3a,#1558a6);color:#fff;padding:48px 6% 70px}
+.hero h1{font-size:clamp(30px,6vw,54px);max-width:720px;margin:0 0 14px}.hero p{max-width:650px;font-size:18px;line-height:1.6}
+.wrap{max-width:1050px;margin:-35px auto 50px;padding:0 18px}.card{background:#fff;border-radius:18px;box-shadow:0 12px 35px #10204018;padding:28px}
+h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+label{font-weight:700;font-size:14px}input,select{width:100%;padding:13px;margin-top:7px;border:1px solid #d6deea;border-radius:10px;font-size:15px}
+button{border:0;border-radius:11px;padding:14px 20px;background:#1677ff;color:#fff;font-weight:800;cursor:pointer;font-size:16px;margin-top:20px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.plan{border:1px solid #dce4ef;border-radius:14px;padding:20px}.plan strong{font-size:20px}.price{font-size:28px;font-weight:900;margin:12px 0}.plan ul{padding-left:20px;line-height:1.8}
+.note{font-size:13px;color:#65738a;line-height:1.5;margin-top:15px}.success{display:none;margin-top:18px;background:#eaf8ef;color:#176b36;padding:16px;border-radius:10px;font-weight:700}
+footer{text-align:center;padding:28px;color:#66758b;font-size:13px}
+@media(max-width:750px){.grid,.plans{grid-template-columns:1fr}.hero{padding-top:35px}}
+</style>
+</head>
+<body>
+<header><div class="logo">AutoProtege</div><div class="badge">Seguro Auto • Simulação</div></header>
+
+<section class="hero">
+<h1>Proteção para o seu carro, do seu jeito.</h1>
+<p>Faça uma simulação gratuita, escolha a cobertura que combina com você e fale com nossa equipe para concluir a contratação com segurança.</p>
+</section>
+
+<main class="wrap">
+<div class="card">
+<h2>🚗 Faça sua simulação</h2>
+<form id="form">
+<div class="grid">
+<div><label>Nome completo</label><input required placeholder="Seu nome"></div>
+<div><label>Telefone</label><input required placeholder="(00) 00000-0000"></div>
+<div><label>Marca e modelo</label><input required placeholder="Ex.: Honda Civic"></div>
+<div><label>Ano do veículo</label><input required type="number" min="1950" max="2030" placeholder="2024"></div>
+<div><label>CEP</label><input required placeholder="00000-000"></div>
+<div><label>Uso do veículo</label><select required><option value="">Selecione</option><option>Particular</option><option>Trabalho</option><option>Aplicativo</option></select></div>
+</div>
+<button type="submit">Ver opções de cobertura</button>
+<div class="success" id="success">Simulação recebida! Nesta demonstração, nenhum pagamento foi processado. Uma equipe poderá entrar em contato para apresentar as condições e o processo de contratação.</div>
+</form>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h2>Planos de exemplo</h2>
+<div class="plans">
+<div class="plan"><strong>Essencial</strong><div class="price">a partir de R$ 129/mês</div><ul><li>Roubo e furto</li><li>Assistência 24h</li><li>Guincho</li></ul></div>
+<div class="plan"><strong>Completo</strong><div class="price">a partir de R$ 189/mês</div><ul><li>Cobertura ampla</li><li>Colisão</li><li>Assistência 24h</li></ul></div>
+<div class="plan"><strong>Premium</strong><div class="price">a partir de R$ 249/mês</div><ul><li>Cobertura ampla</li><li>Carro reserva</li><li>Assistência premium</li></ul></div>
+</div>
+<p class="note">Valores meramente ilustrativos. Preço, coberturas, franquias e condições dependem da análise do veículo e da seguradora. Este site não solicita nem armazena dados completos de cartão, senhas ou códigos de autenticação.</p>
+</div>
+</main>
+
+<footer>AutoProtege • Demonstração de site de seguro auto • Consulte os termos e condições antes de contratar.</footer>
+<script>
+document.getElementById('form').addEventListener('submit',function(e){
+ e.preventDefault();
+ document.getElementById('success').style.display='block';
+ this.querySelector('button').textContent='Simulação enviada';
+});
+</script>
+</body>
+</html>
